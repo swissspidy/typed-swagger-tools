@@ -2,7 +2,7 @@
 // Project: https://github.com/apigee-127/swagger-tools
 // Definitions: https://github.com/swissspidy/typed-swagger-tools
 
-import * as http from 'http';
+import {Request, RequestHandler} from 'express'
 
 declare namespace swagger {
 	export interface IRouterOptions {
@@ -24,11 +24,11 @@ declare namespace swagger {
 	}
 
 	export interface IMiddleware {
-		swaggerMetadata(rlOrSO?: any, apiDeclarations?: any[]): void;
-		swaggerSecurity(options?: any): void;
-		swaggerValidator(options?: IValidatorOptions): void;
-		swaggerRouter(options?: IRouterOptions): void;
-		swaggerUi(options?: IUIOptions): void;
+		swaggerMetadata(rlOrSO?: any, apiDeclarations?: any[]): RequestHandler[];
+		swaggerSecurity(options?: any): RequestHandler[];
+		swaggerValidator(options?: IValidatorOptions): RequestHandler[];
+		swaggerRouter(options?: IRouterOptions): RequestHandler[];
+		swaggerUi(options?: IUIOptions): RequestHandler[];
 	}
 
 	export interface IValidationResponse {
@@ -67,7 +67,7 @@ declare namespace swagger {
 	}
 
 	export type MiddlewareCallback = (middleware: IMiddleware) => void;
-	export type AuthCallback = (req: http.ClientRequest, authOrSecDef: any, scopesOrApiKey: any, callback: AuthCallbackCallback) => void;
+	export type AuthCallback = (req: Request, authOrSecDef: any, scopesOrApiKey: any, callback: AuthCallbackCallback) => void;
 	export type AuthCallbackCallback = (scopesOrApiKey: any) => void;
 
 	export function initializeMiddleware(rlOrSO: any, resources: any[], callback: MiddlewareCallback): void;
