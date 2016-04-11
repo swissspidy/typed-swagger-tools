@@ -4,7 +4,7 @@
 
 import * as http from 'http';
 
-export declare module swaggerTools {
+declare namespace swagger {
 	interface IRouterOptions {
 		controllers?: string|string[]|any;
 		ignoreMissingHandlers?: boolean;
@@ -75,3 +75,5 @@ export declare module swaggerTools {
 
 	export var specs: ISpecifications;
 }
+
+export = swagger;
