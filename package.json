@@ -1,0 +1,29 @@
+{
+	"name": "typed-swagger-tools",
+	"version": "0.10.1",
+	"description": "Type definition for [swagger-tools](https://github.com/apigee-127/swagger-tools)",
+	"scripts": {
+		"clean": "rm -rfv typings",
+		"build": "npm run clean && typings install && tsc",
+		"start": "npm run build"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/swissspidy/typed-swagger-tools"
+	},
+	"keywords": [
+		"TypeScript",
+		"swagger",
+		"middleware",
+		"swagger-tools"
+	],
+	"author": "swissspidy",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/swissspidy/typed-swagger-tools/issues"
+	},
+	"homepage": "https://github.com/swissspidy/typed-swagger-tools",
+	"dependencies": {
+		"swagger-tools": "^0.10.1"
+	}
+}

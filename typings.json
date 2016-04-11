@@ -1,0 +1,10 @@
+{
+  "name": "swagger-tools",
+  "author": "swissspidy",
+  "main": "swagger-tools.d.ts",
+  "browser": "swagger-tools.d.ts",
+  "dependencies": {},
+  "ambientDependencies": {
+    "node": "registry:dt/node#4.0.0+20160330064709"
+  }
+}
