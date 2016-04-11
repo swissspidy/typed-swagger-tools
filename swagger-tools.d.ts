@@ -24,11 +24,11 @@ declare namespace swagger {
 	}
 
 	export interface IMiddleware {
-		swaggerMetadata(rlOrSO?: any, apiDeclarations?: any[]): RequestHandler[];
-		swaggerSecurity(options?: any): RequestHandler[];
-		swaggerValidator(options?: IValidatorOptions): RequestHandler[];
-		swaggerRouter(options?: IRouterOptions): RequestHandler[];
-		swaggerUi(options?: IUIOptions): RequestHandler[];
+		swaggerMetadata(rlOrSO?: any, apiDeclarations?: any[]): RequestHandler;
+		swaggerSecurity(options?: any): RequestHandler;
+		swaggerValidator(options?: IValidatorOptions): RequestHandler;
+		swaggerRouter(options?: IRouterOptions): RequestHandler;
+		swaggerUi(options?: IUIOptions): RequestHandler;
 	}
 
 	export interface IValidationResponse {
