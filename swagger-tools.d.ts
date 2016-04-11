@@ -11,6 +11,41 @@ declare namespace swagger {
 		useStubs?: boolean;
 	}
 
+	export interface IRequestParam {
+		path: string;
+		schema: any;
+		originalValue: any;
+		value: any;
+	}
+
+	export interface IRequest1 extends Request {
+		swagger: {
+			api: any;
+			apiDeclaration: any;
+			apiIndex: number;
+			authorizations: any;
+			operation: any;
+			operationPath: string[];
+			params: any;
+			resourceListing: any;
+			useStubs?: boolean;
+		};
+	}
+
+	export interface IRequest2 extends Request {
+		swagger: {
+			apiPath: string;
+			path: any;
+			operation: any;
+			operationParameters: any[];
+			operationPath: string[];
+			params: any;
+			security: any;
+			swaggerObject: any;
+			useStubs?: boolean;
+		};
+	}
+
 	export interface IUIOptions {
 		apiDocs?: string;
 		apiDocsPrefix?: string;
