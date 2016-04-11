@@ -5,13 +5,13 @@
 import * as http from 'http';
 
 declare namespace swagger {
-	interface IRouterOptions {
+	export interface IRouterOptions {
 		controllers?: string|string[]|any;
 		ignoreMissingHandlers?: boolean;
 		useStubs?: boolean;
 	}
 
-	interface IUIOptions {
+	export interface IUIOptions {
 		apiDocs?: string;
 		apiDocsPrefix?: string;
 		swaggerUi?: string;
@@ -19,11 +19,11 @@ declare namespace swagger {
 		swaggerUiPrefix?: string;
 	}
 
-	interface IValidatorOptions {
+	export interface IValidatorOptions {
 		validateResponse?: boolean;
 	}
 
-	interface IMiddleware {
+	export interface IMiddleware {
 		swaggerMetadata(rlOrSO?: any, apiDeclarations?: any[]): void;
 		swaggerSecurity(options?: any): void;
 		swaggerValidator(options?: IValidatorOptions): void;
@@ -31,13 +31,13 @@ declare namespace swagger {
 		swaggerUi(options?: IUIOptions): void;
 	}
 
-	interface IValidationResponse {
+	export interface IValidationResponse {
 		apiDeclarations: any[];
 		errors: any[];
 		warnings: any[];
 	}
 
-	interface IValidationError {
+	export interface IValidationError {
 		code: string;
 		message: string;
 		path: string[];
@@ -45,7 +45,7 @@ declare namespace swagger {
 		inner?: IValidationError[];
 	}
 
-	interface ISpecification {
+	export interface ISpecification {
 		docsUrl: string;
 		primitives: string[];
 		schemas: any;
@@ -59,16 +59,16 @@ declare namespace swagger {
 		validateModel(aDOrSO: any, modelIdOrRef: string, data: any|any[], callback: (err: any, res: any) => void): void;
 	}
 
-	interface ISpecifications {
+	export interface ISpecifications {
 		v1: ISpecification;
 		v1_2: ISpecification;
 		v2: ISpecification;
 		v2_0: ISpecification;
 	}
 
-	type MiddlewareCallback = (middleware: IMiddleware) => void;
-	type AuthCallback = (req: http.ClientRequest, authOrSecDef: any, scopesOrApiKey: any, callback: AuthCallbackCallback) => void;
-	type AuthCallbackCallback = (scopesOrApiKey: any) => void;
+	export type MiddlewareCallback = (middleware: IMiddleware) => void;
+	export type AuthCallback = (req: http.ClientRequest, authOrSecDef: any, scopesOrApiKey: any, callback: AuthCallbackCallback) => void;
+	export type AuthCallbackCallback = (scopesOrApiKey: any) => void;
 
 	export function initializeMiddleware(rlOrSO: any, resources: any[], callback: MiddlewareCallback): void;
 	export function initializeMiddleware(rlOrSO: any, callback: MiddlewareCallback): void;
